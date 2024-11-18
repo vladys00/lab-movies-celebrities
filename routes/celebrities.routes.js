@@ -14,4 +14,12 @@ module.exports.exportCelebrity = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
+
+module.exports.showCelebrities = (req,res,next) => {
+    Celebrity.find()
+    .then((celebrities)=>{
+        res.render("celebrities/celebrities", {celebrities})
+    })
+    .catch((err)=>next(err));
+};
  
