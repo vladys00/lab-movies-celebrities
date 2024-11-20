@@ -13,6 +13,10 @@ const CelebritySchema = new mongoose.Schema({
     type: String,
     required: [true, "A catch frase is required"],
   },
+  movie: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Movie'
+  }
 });
 
 const Celebrity = mongoose.model("Celebrity",CelebritySchema );
